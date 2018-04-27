@@ -66,7 +66,7 @@ fun main(args: Array<String>) {
     println("merge of $primesUpToN and $countingNumbersZero is ${merge(primesUpToN,countingNumbersZero)}")
     println("merge of $primesUpToN and $countingNumbersNull is ${merge(primesUpToN,countingNumbersNull)}")
     println()
-/*
+
     // listApply tests
     println("listApply of ::add to $countingNumbersUpToN is ${listApply(::add,subLists(countingNumbersUpToN))}")
     println("listApply of ::add to $countingNumbersZero is ${listApply(::add,subLists(countingNumbersZero))}")
@@ -78,5 +78,5 @@ fun main(args: Array<String>) {
     val composedFunction = composeList(functionList)
     var result = composedFunction(n)
     println("composedFunction of [::add1,::add2,::add1] applied to $n is $result")
-*/
+
 }

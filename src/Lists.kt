@@ -97,4 +97,32 @@ fun <T : Comparable<T>> countElements(a : List<List<T>>?) : Int {
     if(a.any()==false) return 0;
     return a.count()
 }
+fun listApply(func: (Int, Int)->Int ,a : List<List<Int>>?) : List<Int>?{
+    if(a==null)return null;
+    if(a.count()==0) return emptyList();
+    val listsize=a.count()
+    val FinalList= ArrayList<Int>();
+    val c=a.elementAt(0);
+
+    for(i in 0 .. a.count()-1) {
+        var accumulator=0
+        var listlist=a[i]
+        for(j in 0 .. a[i].count()-1){
+        accumulator=func(accumulator,listlist[j])
+        }
+        FinalList.add(accumulator)
+    }
+    return FinalList
+}
+fun composeList(a: List<((Int)->Int)>):(Int)->Int{
+    print(a.first())
+    if(a.count()==1){
+        return a.first()
+    }
+    var startfunc= compose(a.first(),a[1])
+    for(i in 2 ..a.count()-1){
+        startfunc= compose(startfunc,a[i])
+    }
+    return (startfunc)
+}
 
